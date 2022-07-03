@@ -113,6 +113,6 @@ $ curl a39bc95f0b995480a9e613e9809f9427-57085e57e28f034c.elb.ap-northeast-2.amaz
 - 환경 추가를 위해서 디렉토리 구조 변경
 - 공동 작업을 위해서 테라폼 백앤드 사용하기
 - 테라폼 중복된 코드 줄이기 ( terragrunt )
-- k8s app 유연성 확보 위해 kustomze 사용
+- k8s app 유연성 확보 위해 kustomize 사용
 - External DNS 설정
 - 인그레스 컨트롤러 헬름 차트로 변경
