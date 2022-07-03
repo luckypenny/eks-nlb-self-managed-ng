@@ -1,7 +1,9 @@
-# 0. Directory 구조
+# 0. Directory 및 전체 구조
 ### apps : python flask app code
 ### k8s : ingress controller, ingress, app deployment & service k8s code 
 ### terraform : vpc, eks, ecr terraform code
+
+<img width="921" alt="eks-nlb-arch" src="https://user-images.githubusercontent.com/14371339/177030630-66e7537e-018e-41f7-8504-556bafa238ae.png">
 
 # 1. Terraform으로 인프라 생성
 테라폼을 사용하여 EKS, ECR, VPC, 자체 관리 노드 그룹 환경을 생성합니다. (공식 모듈 샘플을 참조)
