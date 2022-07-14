@@ -8,14 +8,15 @@ provider "aws" {
 }
 
 locals {
-  cluster_name = "eks-dev-cluster"
+  cluster_name = "eks-lab-cluster"
+  vpc_name = "eks-dev"
 }
 
 module "vpc" {
 #  source = "terraform-aws-modules/vpc/aws"
   source = "./modules/vpc"
 
-  name = local.cluster_name
+  name = local.vpc_name
   cidr = "10.0.0.0/16"
 
   azs             = ["${var.region}a", "${var.region}b", "${var.region}c"]
@@ -28,6 +29,10 @@ module "vpc" {
 
 output "cluster_name" {
   value = local.cluster_name
+}
+
+output "vpc_name" {
+  value = local.vpc_name
 }
 
 output "private_subnets" {
