@@ -11,7 +11,7 @@ provider "kubernetes" {
 }
 
 locals {
-  name            = "eks-dev-cluster"
+  name            = "eks-lab-cluster"
   cluster_version = "1.21"
   region          = "ap-northeast-2"
 
