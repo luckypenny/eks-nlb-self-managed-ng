@@ -33,6 +33,25 @@ spec:
       containers:
       - name: flask-app
         image: 074017796595.dkr.ecr.ap-northeast-2.amazonaws.com/flask-app:1.0
-        imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+          - containerPort: 8080
+        readinessProbe:
+          periodSeconds: 1
+          initialDelaySeconds: 10
+          httpGet:
+            path: /
+            port: 8080
+        livenessProbe:
+          periodSeconds: 1
+          initialDelaySeconds: 10
+          httpGet:
+            path: /
+            port: 8080
+        resources:
+          requests:
+            cpu: "30mi"
+            memory: "50Mi"
+          limits:
+            cpu: "30mi"
+            memory: "50Mi"
+        imagePullPolicy: Always
