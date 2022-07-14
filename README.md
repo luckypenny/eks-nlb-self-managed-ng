@@ -41,13 +41,13 @@ ref) https://github.com/lvthillo/python-flask-docker.git
 Build the Docker image manually
 ```
 $ cd ../apps
-$ docker build -t flask-app .
+$ docker build -t flask-app:1.0 .
 ```
 
 ### Run the container
 Create a container from the image.
 ```
-$ docker run -p 8080:8080 flask-app
+$ docker run -p 8080:8080 flask-app:1.0
 ```
 
 Now visit http://localhost:8080
@@ -59,8 +59,8 @@ Now visit http://localhost:8080
 Set up image tags and deploy to ECR.
 ```
 $ aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 074017796595.dkr.ecr.ap-northeast-2.amazonaws.com
-$ docker tag flask-app:latest 074017796595.dkr.ecr.ap-northeast-2.amazonaws.com/flask-app:latest
-$ docker push 074017796595.dkr.ecr.ap-northeast-2.amazonaws.com/flask-app:latest
+$ docker tag flask-app:1.0 074017796595.dkr.ecr.ap-northeast-2.amazonaws.com/flask-app:1.0
+$ docker push 074017796595.dkr.ecr.ap-northeast-2.amazonaws.com/flask-app:1.0
 ```
 
 # 3. Create k8s Apps (Deployments, Service)
@@ -113,6 +113,6 @@ $ curl a39bc95f0b995480a9e613e9809f9427-57085e57e28f034c.elb.ap-northeast-2.amaz
 - 환경 추가를 위해서 디렉토리 구조 변경
 - 공동 작업을 위해서 테라폼 백앤드 사용하기
 - 테라폼 중복된 코드 줄이기 ( terragrunt )
-- k8s app 유연성 확보 위해 kustomze 사용
+- k8s app 유연성 확보 위해 kustomize 사용
 - External DNS 설정
 - 인그레스 컨트롤러 헬름 차트로 변경
