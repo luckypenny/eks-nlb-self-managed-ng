@@ -3,4 +3,4 @@ RUN pip install flask==1.0.2
 EXPOSE 8080
 COPY . /app
 ENTRYPOINT ["python"]
-CMD ["app.py"]
+CMD ["/app/app.py"]
