@@ -1,6 +1,10 @@
 # EKS (Self Managed Node Gorup, ECR, VPC) with Terraform
 테라폼을 사용하여 EKS, ECR, VPC, 비관리 노드 그룹 환경을 생성합니다.
 
+아래의 공식 모듈을 참조 했습니다.
+
+ref) https://github.com/terraform-aws-modules/
+
 ### Create AWS Componentes for EKS service
 ```
 $ terraform init
